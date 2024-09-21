@@ -1,0 +1,210 @@
+<div id="bioreactor">
+    <h1>Bioreactor</h1>
+
+    <!-- Thermocouples Section -->
+    <div class="gauge-container">
+        <div id="bio-thermo-gauge1"></div>
+        <div id="bio-thermo-gauge2"></div>
+        <div class="graph-container">
+            <div id="bio-thermo-graph"></div>
+            <label>Number of previous seconds to track: </label>
+            <input type="number" id="bio-thermo-tracking-amount">
+            <button id="bio-thermo-tracking" onclick="setTracking('bio-thermo-tracking', 'bio-thermo-tracking-amount', 'bio-thermo-graph')">Track Data</button>        
+        </div>
+    </div>
+
+    <!-- pH Gauges Section -->
+    <div class="gauge-container">
+        <div>
+            <div id="bio-ph-gauge1"></div>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Setpoint:</label>
+                <input type="number" step="0.01" name="bs1" id="bio-ph-gauge1-amount">
+                <button>Push Data</button>    
+            </form>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Kp:</label>
+                <input type="number" step="0.01" name="bp1" id="bio-ph-gauge1-kp"><br>
+                <label>Ki:</label>
+                <input type="number" step="0.01" name="bi1" id="bio-ph-gauge1-ki"><br>
+                <label>Kd:</label>
+                <input type="number" step="0.01" name="bd1" id="bio-ph-gauge1-kd"><br>
+                <button>Push Data</button>
+            </form>
+        </div>
+
+        <div>
+            <div id="bio-ph-gauge2"></div>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Setpoint:</label>
+                <input type="number" step="0.01" name="bs2" id="bio-ph-gauge2-amount">
+                <button>Push Data</button>    
+            </form>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Kp:</label>
+                <input type="number" step="0.01" name="bp2" id="bio-ph-gauge2-kp"><br>
+                <label>Ki:</label>
+                <input type="number" step="0.01" name="bi2" id="bio-ph-gauge2-ki"><br>
+                <label>Kd:</label>
+                <input type="number" step="0.01" name="bd2" id="bio-ph-gauge2-kd"><br>
+                <button>Push Data</button>
+            </form>
+        </div>
+
+        <div class="graph-container">
+            <div id="bio-ph-graph"></div>
+            <label>Number of previous seconds to track: </label>
+            <input type="number" id="bio-ph-tracking-amount">
+            <button id="bio-ph-tracking" onclick="setTracking('bio-ph-tracking', 'bio-ph-tracking-amount', 'bio-ph-graph')">Track Data</button>        
+        </div>
+    </div>
+
+    <!-- Oxygen Gauges Section -->
+    <div class="gauge-container">
+        <div id="bio-oxygen-gauge1"></div>
+        <div id="bio-oxygen-gauge2"></div>
+        <div class="graph-container">
+            <div id="bio-oxygen-graph"></div>
+            <label>Number of previous seconds to track: </label>
+            <input type="number" id="bio-oxygen-tracking-amount">
+            <button id="bio-oxygen-tracking" onclick="setTracking('bio-oxygen-tracking', 'bio-oxygen-tracking-amount', 'bio-oxygen-graph')">Track Data</button>        
+        </div>
+    </div>
+
+    <!-- Turbidity Gauges Section -->
+    <div class="gauge-container">
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-turbidity-gauge1"></div>
+            <label>Sample time (s):</label>
+            <input type="number" step="0.01" name="bt1" id="bio-turbidity-gauge1-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-turbidity-gauge2"></div>
+            <label>Sample time (s):</label>
+            <input type="number" step="0.01" name="bt2" id="bio-turbidity-gauge2-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <div class="graph-container">
+            <div id="bio-turbidity-graph"></div>
+            <label>Number of previous seconds to track: </label>
+            <input type="number" id="bio-turbidity-tracking-amount">
+            <button id="bio-turbidity-tracking" onclick="setTracking('bio-turbidity-tracking', 'bio-turbidity-tracking-amount', 'bio-turbidity-graph')">Track Data</button>        
+        </div>
+    </div>
+
+    <!-- Motors Section 1 -->
+    <div class="gauge-container">
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-stirring-gauge1"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm1" id="bio-stirring-gauge1-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump1-gauge1"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm2" id="bio-pump1-gauge1-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump2-gauge1"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm3" id="bio-pump2-gauge1-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump3-gauge1"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm4" id="bio-pump3-gauge1-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump4-gauge1"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm5" id="bio-pump4-gauge1-amount"><br>
+            <button>Push Data</button>
+        </form>
+    </div>
+
+    <!-- Motors Section 2 -->
+    <div class="gauge-container">
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-stirring-gauge2"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm6" id="bio-stirring-gauge2-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump1-gauge2"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm7" id="bio-pump1-gauge2-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump2-gauge2"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm8" id="bio-pump2-gauge2-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump3-gauge2"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm9" id="bio-pump3-gauge2-amount"><br>
+            <button>Push Data</button>
+        </form>
+        <form action="/form-submit" method="POST" target="target">
+            <div id="bio-pump4-gauge2"></div>
+            <label>Setpoint:</label>
+            <input type="number" step="0.01" name="bm10" id="bio-pump4-gauge2-amount"><br>
+            <button>Push Data</button>
+        </form>
+    </div>
+
+    <!-- Post Processing Section -->
+    <h2>Post Processing</h2>
+    <div class="gauge-container">
+        <div>
+            <div id="bio-pro-gauge1"></div>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Setpoint:</label>
+                <input type="number" step="0.01" name="Ps1" id="bio-pro-gauge1-amount"><br>
+                <button>Push Data</button>    
+            </form>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Kp:</label>
+                <input type="number" step="0.01" name="Pp1" id="bio-pro-gauge1-kp"><br>
+                <label>Ki:</label>
+                <input type="number" step="0.01" name="Pi1" id="bio-pro-gauge1-ki"><br>
+                <label>Kd:</label>
+                <input type="number" step="0.01" name="Pd1" id="bio-pro-gauge1-kd"><br>
+                <button>Push Data</button>
+            </form>
+        </div>
+
+        <div>
+            <div id="bio-pro-gauge2"></div>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Setpoint:</label>
+                <input type="number" step="0.01" name="Ps2" id="bio-pro-gauge2-amount">
+                <button>Push Data</button>    
+            </form>
+            <form action="/form-submit" method="POST" target="target">
+                <label>Kp:</label>
+                <input type="number" step="0.01" name="Pp2" id="bio-pro-gauge2-kp"><br>
+                <label>Ki:</label>
+                <input type="number" step="0.01" name="Pi2" id="bio-pro-gauge2-ki"><br>
+                <label>Kd:</label>
+                <input type="number" step="0.01" name="Pd2" id="bio-pro-gauge2-kd"><br>
+                <button>Push Data</button>
+            </form>
+        </div>
+
+        <div class="graph-container">
+            <div id="bio-pro-graph"></div>
+            <label>Number of previous seconds to track: </label>
+            <input type="number" id="bio-pro-tracking-amount">
+            <button id="bio-pro-tracking" onclick="setTracking('bio-pro-tracking', 'bio-pro-tracking-amount', 'bio-pro-graph')">Track Data</button>        
+        </div>
+    </div>
+</div>

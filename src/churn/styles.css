@@ -1,0 +1,150 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 2;
+    padding: 2;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+form {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 300px;
+}
+
+input, select, button {
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    display: block;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Container Color Themes */
+#pyrolysis {
+    background-color: #ffe5e5; /* Light Red Theme */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#bioreactor {
+    background-color: #e5ffe5; /* Light Green Theme */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#chemreactor {
+    background-color: #e5f0ff; /* Light Blue Theme */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Grouping Gauges and Forms */
+.gauge-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.gauge-container > div {
+    text-align: center;
+}
+
+/* Graph Styling */
+.graph-container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+#pyrolysis-thermo-graph,
+#bio-thermo-graph,
+#bio-ph-graph,
+#bio-oxygen-graph,
+#bio-turbidity-graph,
+#bio-pro-graph,
+#chem-thermo-graph {
+    height: 350px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* First row: Start Logging and E-STOP buttons */
+.start-stop {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%; /* Take 80% of the screen width */
+}
+
+.estop-button {
+    background-color: red;
+}
+
+.estop-button:hover {
+    background-color: darkred;
+}
+
+/* Second row: Download/Clear buttons in a single line */
+.buttons-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%; /* Take 80% of the screen width */
+    gap: 10px;
+    flex-wrap: nowrap; /* Ensure that buttons do not wrap to new lines */
+}
+
+/* Third row: Clear All Data button */
+.clear-all-row {
+    margin: 20px auto;
+    width: 80%; /* Take 80% of the screen width */
+}
+
+.clear-all-button {
+    background-color: orange;
+    color: white;
+}
+
+.clear-all-button:hover {
+    background-color: darkorange;
+}
+
+/* Connection Status */
+.connection-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .gauge-container {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons-row, .clear-all-row {
+        flex-direction: column;
+        width: 100%;
+    }
+}
