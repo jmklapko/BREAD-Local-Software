@@ -896,7 +896,7 @@ void DCMTCommandPHPID(int address, float Kp_set, float Ki_set, float Kd_set)
   Wire.endTransmission(); // stop transmitting
 }
 
-void PHDOCommand(int address, char *commandData)
+void PHDOCommand(int address, const char *commandData)
 {
   Wire.beginTransmission(address);
   Wire.write(commandData);
