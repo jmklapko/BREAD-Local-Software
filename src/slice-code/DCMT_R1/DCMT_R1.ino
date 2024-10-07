@@ -2,7 +2,7 @@
 #include <FastLED.h>
 #include <PID_v1.h>
 
-#define I2C_ADR 27
+#define I2C_ADR 21
 
 #define ESTOP   2
 #define LED_PIN 5

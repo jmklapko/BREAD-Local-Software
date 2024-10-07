@@ -128,17 +128,20 @@ float pyro_heater_pid[10][4]; // pyrolysis heater/fan PID {setpoint, Kp, Ki, Kd}
 int bio_thermo[2][2] = { // bioreator thermocouples {address, thermocouple}
     {10, 2},
     {11, 2}};
+
 int bio_post_heaters[2][4] = {
     // bioreactor post processing heaters {address, heater, thermocouple, reverseEnable}
     {12, 2, 2, 0}, // pasteurization
     {14, 2, 2, 0}  // dryer
 };
+
 float bio_post_heater_pid[2][4]; // {setpoint, Kp, Ki, Kd}
 float bio_thermo_val[4] = {0, 0, 0, 0};
 
 int bio_ph[2][2] = { // bioreactor pH layout {PHDO address, DCMT address}
     {98, 20},
     {100, 21}};
+    
 float bio_ph_val[2][5]; // bioreactor pH settings (pH, Setpoint, Kp, Ki, Kd)
 
 int bio_do[2] = {97, 99};     // bioreactor DO addresses
@@ -147,6 +150,7 @@ float bio_do_val[2] = {0, 0}; // bioreactor DO values
 int bio_turbidity[2][4] = { // bioreactor turbidity pump {address, motor, direction, sampleTime}
     {22, 1, 1, 0},
     {22, 2, 1, 0}};
+
 float bio_turbidity_val[2] = {0, 0}; // bioreactor turbidity value
 
 int bio_motors[10][3] = {
