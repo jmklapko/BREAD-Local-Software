@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="plotly.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body onload="loadData()">
@@ -31,9 +32,12 @@
     
     <iframe name="target" style="display:none;"></iframe>
     <hr>
+    <button class="tablink" onclick="openPage('pyrolysis', this, 'green')">Pyrolsis Reactor</button>
+    <button class="tablink" onclick="openPage('bioreactor', this, 'green')" id="defaultOpen">Bioreactor</button>
+    <button class="tablink" onclick="openPage('chemreactor', this, 'green')">Chemical Deconstruction Reactor</button>
 
-    <div id="pyrolysis">
-        <h1>Pyrolysis Reactor</h1>
+    <div id="pyrolysis" class="tabcontent">
+        <!-- <h2>Pyrolysis Reactor</h2> -->
         <!-- Gauge area -->
         <div style="display: grid; grid-template-columns: auto auto auto auto auto;">
             <div>
@@ -306,8 +310,8 @@
         <br><br><br><br>
     </div>
 
-    <div id="bioreactor">
-        <h1>Bioreactor</h1>
+    <div id="bioreactor"class="tabcontent">
+        <!-- <h1>Bioreactor</h1> -->
         <div id="bio-thermocouples" style="display: flex">
             <div id="bio-thermo-gauge1"></div>
             <div id="bio-thermo-gauge2"></div>
@@ -533,7 +537,7 @@
     </div>
 
     <div id="chemreactor">
-        <h1>Chemical Deconstruction Reactor</h1>
+        <!-- <h1>Chemical Deconstruction Reactor</h1> -->
         <div style="display: grid; grid-template-columns: auto auto auto auto auto auto;">
             <div>
                 <div id="chem-thermo-gauge1"></div>
@@ -1254,6 +1258,29 @@ var pyrolysisGaugeInfo = {
         value: 0,
     },
 }
+function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 
 //create new gauge plots
 Plotly.newPlot('pyrolysis-thermo-gauge1', thermo_gauge, gaugeLayout);
