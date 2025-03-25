@@ -549,7 +549,7 @@ Chem Decon Commands:
   });
   server.addHandler(&events);
 
-  server.serveStatic("/", SD, "/");
+  server.serveStatic("/", SD, "/").setDefaultFile("index.htm");
   server.begin();
 
   lastPOST = millis();
