@@ -1,6 +1,6 @@
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
-    height: 100%;
+    /* height: 100%; */
     margin: 0;
     font-family: Arial;
   }
@@ -19,6 +19,8 @@ body, html {
   }
   .tabnav {
     width: 100%;
+    background-color: #777;
+    display: flex;
   }
   
   .tablink:hover {
@@ -27,8 +29,8 @@ body, html {
   
   /* Style the tab content (and add height:100% for full page content) */
   .tabcontent {
-    color: white;
-    display: none;
+    color: black;
+    display: grid;
     padding: 100px 20px;
     height: 100%;
   }
