@@ -548,8 +548,8 @@ Chem Decon Commands:
     client->send("hello!", NULL, millis(), 10000);
   });
   server.addHandler(&events);
-
-  server.serveStatic("/", SD, "/").setDefaultFile("index.htm");
+  server.serveStatic("/js", SD, "/js").setCacheControl("max-age=31536000");
+  server.serveStatic("/", SD, "/").setCacheControl("max-age=31536000");
   server.begin();
 
   lastPOST = millis();

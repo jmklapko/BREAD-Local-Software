@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body onload="loadData()">
 
@@ -28,7 +28,7 @@
             </div>
         </div>
         
-        <!-- <iframe name="target" style="display:none;"></iframe> -->
+        <iframe name="target" style="display:none;"></iframe>
         <hr>
         <nav class="tabnav">
             <button class="tablink" onclick="openPage('pyrolysis', this, 'green')" id="defaultOpen">Pyrolsis Reactor</button>
@@ -625,8 +625,8 @@
                 <button id="chem-thermo-tracking" onclick="setTracking('chem-thermo-tracking', 'chem-thermo-tracking-amount', 'chem-thermo-graph')">Track Data</button>        
             </div>
         </div>
-    <script src="plotly.js"></script>
-    <script src="tabbing.js"></script>
+    <script src="js/plotly.js"></script>
+    <script src="js/tabbing.js"></script>
     <script>
 
     //----------------Pyrolysis thermocouple traces-----------------------//  
