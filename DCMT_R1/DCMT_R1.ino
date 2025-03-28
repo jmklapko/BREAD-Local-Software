@@ -421,12 +421,12 @@ void requestEvent() {
   if(isnan(DCMT.turbVoltage[0]) || !(DCMT.turbPump1))
     turb1.number = 0;
   else
-    turb1.number = DCMT.turbVoltage[0];
+    turb1.number = DCMT.currentTurbidity[0];
 
   if(isnan(DCMT.turbVoltage[1]) || !(DCMT.turbPump2))
     turb2.number = 0;
   else
-    turb2.number = DCMT.turbVoltage[1];
+    turb2.number = DCMT.currentTurbidity[1];
 
   for (int i = 0; i < 4; i++) Wire.write(turb1.bytes[i]);
   for (int i = 0; i < 4; i++) Wire.write(turb2.bytes[i]);
