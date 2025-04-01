@@ -849,6 +849,25 @@ void RLHTCommandPID(int address, byte heater, float Kp_set, float Ki_set, float 
   Serial.println(Kd.number);
 }
 
+void RLHTCommandOffset(int address, byte heater, float offsetSetpoint)
+{
+  FLOATUNION_t offset;
+  offset.number = offsetSetpoint;
+
+  Wire.beginTransmission(address);
+  Wire.write('O');
+  Wire.write(heater);
+  for(int i=0; i<4; i++){
+    Wire.write(offset.bytes[i]);              // sends one byte
+  }
+  Wire.endTransmission();    // stop transmitting
+
+  Serial.print(address);
+  Serial.print('O');
+  Serial.print(heater);
+  Serial.print(offset.number);
+}
+
 void DCMTRequestTurbidity(int address, float* turbidity1, float* turbidity2)
 {
   bool data_received = false;
